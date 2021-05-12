@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 class App extends Component {
 
-  componentDidMount() {
-    fetch('http://localhost:3000/api/v1/reviews')
-    .then(res => res.json())
-    .then(data => console.log(data[0].description))
-  }
+  // componentDidMount() {
+  //   fetch('http://localhost:3000/api/v1/movies')
+  //   .then(res => res.json())
+  //   .then(data => console.log(data))
+  // }
 
   render() {
     return (
