@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import Movies from '../components/Movies'
-import MovieReview from '../components/MovieReview'
+import MovieReviewInput from '../components/MovieReviewInput'
 import { fetchMovies } from '../redux/actions/fetchMovies'
 
 class MoviesContainer extends Component {
@@ -13,7 +13,7 @@ class MoviesContainer extends Component {
     render() {
         return (
             <div>
-                <MovieReview /><br></br>
+                <MovieReviewInput /><br></br>
                 <Movies movies={this.props.movies}/>
             </div>
         )

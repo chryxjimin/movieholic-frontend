@@ -1,3 +1,4 @@
+
 export function fetchMovies() {
   return (dispatch) => {
       fetch('http://localhost:3000/api/v1/movies')
