@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { addReview } from '../redux/actions/addReview'
 
 class MovieReviewInput extends Component {
+    // console.log(props)
 
-    state = {description: ''}
+    state = {
+        description: '',
+        // movie_id: ''
+    }
 
     handleChange = (event) => {
         // debugger;
@@ -11,20 +17,28 @@ class MovieReviewInput extends Component {
        })
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state)
+       this.props.addReview(this.state); 
+    }
+
+
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>Movie Review</label>
                     <input onChange={this.handleChange} name="description" type="text-area" placeholder="Type in your review" value={this.state.description}>
                     </input>
+                    <input type="submit" />
                 </form>
             </div>
         )
     }
 }
 
-export default MovieReviewInput;
+export default connect(null, { addReview })(MovieReviewInput);
 
 
 //for controlled forms we needed to add name to input to match the attribute within 
