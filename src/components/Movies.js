@@ -1,9 +1,11 @@
 import React from 'react'
 
 function Movies(props) {
+
+
     return (
         <div>
-            Movies
+            {props.movies.map(movie => <h3 key={movie.id}>{movie.title}</h3>)}
         </div>
     )
 }

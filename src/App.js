@@ -19,7 +19,7 @@ class App extends Component {
 //mapStateToProps is a way of accessing values of our store as props
 //mapStateToProps gives us access to what is currently in the store
 //mapDispatchTo Props gives us ability to dispatch new actions to our store directly to the componeentn
-export default connect()(App);
+export default App;
 
 //connect is automatically calling dispatch for us on the return value
 //of {fetchMovies}
