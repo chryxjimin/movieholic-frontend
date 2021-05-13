@@ -1,9 +1,8 @@
-export function fetchMovies(action) {
-    return action
+export function fetchMovies() {
+  
     // fetch('http://localhost:3000/api/v1/movies')
     // .then(res => res.json())
     // .then(data => console.log(data))
-
 }
 
 //our action creator is a function which dispactches an action object
