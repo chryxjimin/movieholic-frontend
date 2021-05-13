@@ -1,6 +1,5 @@
 export const addReview = (data) => {
      return (dispatch) => {
-         console.log(data.description)
         fetch('http://localhost:3000/api/v1/movies', {
             method: 'POST',
             headers: {
