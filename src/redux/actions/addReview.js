@@ -1,6 +1,6 @@
 export const addReview = (data) => {
      return (dispatch) => {
-        fetch('http://localhost:3000/api/v1/movies', {
+        fetch('http://localhost:3000/api/v1/reviews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

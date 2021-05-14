@@ -8,6 +8,10 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import movieReducer from './redux/reducers/movieReducer'
+import { BrowserRouter as Router } from 'react-router-dom';
+//will use this in on e place in our application (one place only) 
+//at the VERY TOP LEVEL, and it listens for any route changes in the browser, 
+//and makes those changes accessible to any of it's children 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -17,8 +21,11 @@ let store = createStore(movieReducer, composeEnhancers(applyMiddleware(thunk)));
 //and will return a new version of that store
 
 ReactDOM.render(
+
     <Provider store={store}>
-        <App /> 
+        <Router>
+            <App /> 
+        </Router>
     </Provider >,
 document.getElementById('root')
 );

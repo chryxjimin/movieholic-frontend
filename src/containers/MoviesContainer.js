@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import Movies from '../components/Movies'
-import MovieReviewInput from '../components/MovieReviewInput'
+// import MovieReviewInput from '../components/MovieReviewInput'
 import { fetchMovies } from '../redux/actions/fetchMovies'
+import { Route } from 'react-router-dom'
 
 class MoviesContainer extends Component {
 
@@ -13,8 +14,12 @@ class MoviesContainer extends Component {
     render() {
         return (
             <div>
-                <MovieReviewInput /><br></br>
-                <Movies movies={this.props.movies}/>
+                {/* <Route path='/reviews/new' component={MovieReviewInput}> */}
+                    {/* //need to make reviews container and call review action and reducer */}
+                    {/* <MovieReviewInput /><br></br> */}
+                <Route exact path='/movies' render = {() => <Movies movies={this.props.movies} />} />
+                    
+               
             </div>
         )
     }
