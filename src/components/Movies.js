@@ -1,12 +1,14 @@
 import React from 'react'
 import Movie from './Movie'
+import { Route } from 'react-router-dom'
 
 function Movies(props) {
     
     return (
         <div>
             {props.movies.map(movie => 
-            <div key={movie.id}><Movie movie={movie}/></div>
+                <div key={movie.id}><Movie movie={movie}/></div>
+                // <Route path='/movies/:id' render = {() => <Movie movie={props.movie[0]} /> } />
             )}
         </div>
     )
