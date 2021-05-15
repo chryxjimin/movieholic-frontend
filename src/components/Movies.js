@@ -7,7 +7,7 @@ function Movies(props) {
     return (
         <div>
             {props.movies.map(movie => 
-                <div key={movie.id}><Link path={`/movies/${movie.id}`}>{movie.title}</Link></div>
+                <div key={movie.id}><Link to={`/movies/${movie.id}`}>{movie.title}</Link></div>
                 // <Route path='/movies/:id' render = {() => <Movie movie={props.movie[0]} /> } />
             )}
         </div>

@@ -4,7 +4,8 @@ import Movies from '../components/Movies'
 import Movie from '../components/Movie'
 // import MovieReviewInput from '../components/MovieReviewInput'
 import { fetchMovies } from '../redux/actions/fetchMovies'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
+//switch returns the first thing that matches
 
 class MoviesContainer extends Component {
 
@@ -18,8 +19,10 @@ class MoviesContainer extends Component {
                 {/* <Route path='/reviews/new' component={MovieReviewInput}> */}
                     {/* //need to make reviews container and call review action and reducer */}
                     {/* <MovieReviewInput /><br></br> */}
-                <Route exact path='/movies' render = {(routerProps) => <Movies {...routerProps} movies={this.props.movies} />} />
-                <Route path='/movies/:id' render = {(routerProps) => <Movie {...routerProps} movies={this.props.movies} />} />
+                <Switch>
+                    <Route exact path='/movies' render = {(routerProps) => <Movies {...routerProps} movies={this.props.movies} />} />
+                    <Route path='/movies/:id' render = {(routerProps) => <Movie {...routerProps} movies={this.props.movies} />} />
+                </Switch>
                {/* passing in routerProps gives us access to props such as params called match */}
             </div>
         )
