@@ -8,8 +8,6 @@ const Movie = (props) => {
    
     return (
         <div>
-            {/* <p>{movie.title}</p>
-            <img src={movie.poster} /> */}
             <p>{movie ? movie.title : null}</p>
             <img src={movie ? movie.poster : null} />
         </div>
