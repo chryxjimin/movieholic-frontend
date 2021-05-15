@@ -1,5 +1,6 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
+import ReviewsContainer from '../containers/ReviewsContainer'
 
 const Movie = (props) => {
 
@@ -12,6 +13,7 @@ const Movie = (props) => {
             {/* {movie ? null : <Redirect to='/movies' />} */}
             <p>{movie ? movie.title : null}</p>
             <img src={movie ? movie.poster : null} />
+            <ReviewsContainer />
         </div>
     )
 }
