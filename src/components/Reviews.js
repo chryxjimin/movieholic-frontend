@@ -3,7 +3,9 @@ import React from 'react'
 const Reviews = (props) => {
     return (
         <div>
-            Reviews
+            { props.reviews && props.reviews.map(review => 
+                <li key={review.id}>{review.description}</li>
+                )}
         </div>
     )
 }

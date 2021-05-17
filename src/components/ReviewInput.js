@@ -2,24 +2,25 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addReview } from '../redux/actions/addReview'
 
-class MovieReviewInput extends Component {
-    // console.log(props)
-
+class ReviewInput extends Component {
+    
     state = {
-        description: '',
-        // movie_id: ''
+        description: ''
     }
-
+    
     handleChange = (event) => {
         // debugger;
-       this.setState({
-        [event.target.name]: event.target.value
-       })
+        this.setState({
+            [event.target.name]: event.target.value
+        })
     }
-
+    
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.addReview(this.state); 
+        // console.log(this.state)
+        console.log(this.props)
+        // console.log(this.props.movie.id)
+        this.props.addReview(this.state, this.props.movie.id); 
         this.setState({
             description: ''
         })
@@ -40,7 +41,7 @@ class MovieReviewInput extends Component {
     }
 }
 
-export default connect(null, { addReview })(MovieReviewInput);
+export default connect(null, { addReview })(ReviewInput);
 
 
 //for controlled forms we needed to add name to input to match the attribute within 

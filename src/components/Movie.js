@@ -6,14 +6,13 @@ const Movie = (props) => {
 
 
     let movie = props.movies[props.match.params.id - 1]
-    console.log(movie)
    
     return (
         <div>
             {/* {movie ? null : <Redirect to='/movies' />} */}
             <p>{movie ? movie.title : null}</p>
             <img src={movie ? movie.poster : null} height="100" width="100" />
-            <ReviewsContainer />
+            <ReviewsContainer movie={movie} />
         </div>
     )
 }
