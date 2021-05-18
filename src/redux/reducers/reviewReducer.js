@@ -1,5 +1,5 @@
 function reviewReducer(state = {reviews: []}, action) {
-//    debugger; 
+
     switch (action.type) {
         case 'ADD_REVIEW': 
             return {...state, reviews: [...state.reviews, action.payload]}

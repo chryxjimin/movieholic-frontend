@@ -9,7 +9,6 @@ class ReviewInput extends Component {
     }
     
     handleChange = (event) => {
-        // debugger;
         this.setState({
             [event.target.name]: event.target.value
         })
@@ -17,9 +16,7 @@ class ReviewInput extends Component {
     
     handleSubmit = (event) => {
         event.preventDefault();
-        // console.log(this.state)
         console.log(this.props)
-        // console.log(this.props.movie.id)
         this.props.addReview(this.state, this.props.movie.id); 
         this.setState({
             description: ''
