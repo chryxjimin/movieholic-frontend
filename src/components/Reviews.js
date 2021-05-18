@@ -9,7 +9,6 @@ const Reviews = (props) => {
 
     return (
         <div>
-            {console.log(props.reviews)}
             { props.reviews && props.reviews.map(review => 
                 <li key={review.id}>{review.description}<button onClick={() => handleDelete(review)}>Delete</button></li>
                 )}

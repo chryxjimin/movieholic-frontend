@@ -10,7 +10,7 @@ const Movie = (props) => {
     return (
         <div>
             {/* {movie ? null : <Redirect to='/movies' />} */}
-            <p>{movie ? movie.title : null}</p>
+            <p>{movie ? movie.title : null} <br></br> {movie? movie.year : null }</p>
             <img src={movie ? movie.poster : null} height="100" width="100" />
             <ReviewsContainer movie={movie} />
         </div>

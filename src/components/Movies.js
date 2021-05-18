@@ -1,11 +1,13 @@
 import React from 'react'
 import Movie from './Movie'
 import { Route, Link } from 'react-router-dom'
+import SearchInput from './SearchInput'
 
 function Movies(props) {
     
     return (
         <div>
+            <SearchInput />
             {props.movies.map(movie => 
                 <div key={movie.id}><Link to={`/movies/${movie.id}`}>{movie.title}</Link></div>
                 // <Route path='/movies/:id' render = {() => <Movie movie={props.movie[0]} /> } />
