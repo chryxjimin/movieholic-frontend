@@ -17,11 +17,15 @@ class MoviesContainer extends Component {
         return (
             <div>
                 {/* <Route path='/reviews/new' component={MovieReviewInput}> */}
-                    {/* //need to make reviews container and call review action and reducer */}
-                    {/* <MovieReviewInput /><br></br> */}
                 <Switch>
-                    <Route exact path='/movies' render = {(routerProps) => <Movies {...routerProps} movies={this.props.movies} />} />
-                    <Route path='/movies/:id' render = {(routerProps) => <Movie {...routerProps} movies={this.props.movies} />} />
+                    {console.log(this.props.movies)}
+                    {/* //add condition for route */}
+                    if (this.props.movies.id !== null ) {
+                        // <Route path='/movies/:id/reviews/new' render = {(routerProps) => <Movie {...routerProps} movies={this.props.movies} />} />
+                        <Route path='/movies/:id' render = {(routerProps) => <Movie {...routerProps} movies={this.props.movies} />} />
+                    } else {
+                        <Route exact path='/movies' render = {(routerProps) => <Movies {...routerProps} movies={this.props.movies} />} />
+                    }
                 </Switch>
                {/* passing in routerProps gives us access to props such as params called match */}
             </div>

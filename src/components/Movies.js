@@ -8,8 +8,7 @@ function Movies(props) {
 
     return (
         <div>
-            
-             <input type="text" name="searchQuery" placeholder="Search..." onChange={(event) => {setSearch(event.target.value)}}></input>
+            <input type="text" name="searchQuery" placeholder="Search..." onChange={(event) => {setSearch(event.target.value)}}></input>
            
             {props.movies.filter((movie) => {
                 if (search === "") {
