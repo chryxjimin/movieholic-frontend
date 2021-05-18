@@ -1,16 +1,24 @@
 import React from 'react'
 import Movie from './Movie'
 import { Route, Link } from 'react-router-dom'
-import SearchInput from './SearchInput'
+import { useState } from 'react'
 
 function Movies(props) {
-    
+    const [search, setSearch] = useState("");
+
     return (
         <div>
-            <SearchInput />
-            {props.movies.map(movie => 
+            
+             <input type="text" name="searchQuery" placeholder="Search..." onChange={(event) => {setSearch(event.target.value)}}></input>
+           
+            {props.movies.filter((movie) => {
+                if (search === "") {
+                    return movie
+                } else if (movie.title.toLowerCase().includes(search.toLowerCase())) {
+                    return movie
+                }
+            }).map(movie => 
                 <div key={movie.id}><Link to={`/movies/${movie.id}`}>{movie.title}</Link></div>
-                // <Route path='/movies/:id' render = {() => <Movie movie={props.movie[0]} /> } />
             )}
         </div>
     )
@@ -19,18 +27,6 @@ function Movies(props) {
 
 }
 
-
-// renderMovies = () => {
-//     return props.movies.map(movie => {
-//         return (
-//             <div> 
-//                 <img src= {movie.poster} />
-//                  <h3 key={movie.id}>{movie.title}</h3>
-//             </div>
-//         )
-//     })
-
-// }
 
 
 export default Movies;
