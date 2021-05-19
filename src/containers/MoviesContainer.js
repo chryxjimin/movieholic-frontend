@@ -17,25 +17,22 @@ class MoviesContainer extends Component {
 
 
     renderMovie = (routerProps) => {
-        // console.log(this.props.movies.id)
-        // console.log(routerProps.match.params.id )
-        if (routerProps.match.params.id !== null ) {
+        const movie = this.props.movies.find (movie =>  movie.id == routerProps.match.params.id)
+            console.log(movie)
+        if (movie !== undefined ) {
             return <Movie {...routerProps} movies={this.props.movies} />
         } else {
             return <Redirect to='/movies' />
         }
-
     }
 
     render() {
         return (
             <div>
-                {/* <Route path='/reviews/new' component={MovieReviewInput}> */}
                 <Switch>
                         <Route path='/movies/api' component={MovieApi} />
                         <Route path='/movies/:id/reviews/new' render = {(routerProps) => <Movie {...routerProps} movies={this.props.movies} />} />
                         <Route path='/movies/:id' render = {this.renderMovie} />
-                        {/* <Route exact path='/movies' render = {this.renderMovie} /> */}
                         <Route exact path='/movies' render = {(routerProps) => <Movies {...routerProps} movies={this.props.movies} />} />
                   
                 </Switch>
