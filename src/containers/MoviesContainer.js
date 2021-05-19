@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import Movies from '../components/Movies'
 import Movie from '../components/Movie'
+import MovieApi from '../components/MovieApi'
 import { fetchMovies } from '../redux/actions/fetchMovies'
 import { Route, Switch  } from 'react-router-dom'
 import { Redirect } from 'react-router-dom'
@@ -31,7 +32,7 @@ class MoviesContainer extends Component {
             <div>
                 {/* <Route path='/reviews/new' component={MovieReviewInput}> */}
                 <Switch>
-                    
+                        <Route path='/movies/api' component={MovieApi} />
                         <Route path='/movies/:id/reviews/new' render = {(routerProps) => <Movie {...routerProps} movies={this.props.movies} />} />
                         <Route path='/movies/:id' render = {this.renderMovie} />
                         {/* <Route exact path='/movies' render = {this.renderMovie} /> */}
