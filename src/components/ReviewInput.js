@@ -3,6 +3,11 @@ import { connect } from 'react-redux'
 import { addReview } from '../redux/actions/addReview'
 
 class ReviewInput extends Component {
+
+    componentDidMount() {
+        console.log(`componentdidmount`, this.props)
+
+    }
     
     state = {
         description: ''
@@ -16,8 +21,9 @@ class ReviewInput extends Component {
     
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.props)
-        this.props.addReview(this.state, this.props.movie.id); 
+        console.log(`handlesubmit`, this.props)
+        console.log(this.props.movies)
+        this.props.addReview(this.state, this.props.movies.id); 
         this.setState({
             description: ''
         })

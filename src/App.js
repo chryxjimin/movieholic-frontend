@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //connect gives us access to the store
-// import { fetchMovies } from './redux/actions/fetchMovies'
+import { fetchMovies } from './redux/actions/fetchMovies'
 import MoviesContainer from './containers/MoviesContainer'
 class App extends Component {
 
-  // componentDidMount() {
-  //   this.props.fetchMovies();
-  // }
+  componentDidMount() {
+    this.props.fetchMovies();
+  }
 
   render() {
     return (
@@ -22,7 +22,7 @@ class App extends Component {
 //mapStateToProps is a way of accessing values of our store as props
 //mapStateToProps gives us access to what is currently in the store
 //mapDispatchTo Props gives us ability to dispatch new actions to our store directly to the componeentn
-export default App;
+export default connect(null, { fetchMovies })(App);
 
 //connect is automatically calling dispatch for us on the return value
 //of {fetchMovies}
