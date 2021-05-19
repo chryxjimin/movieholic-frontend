@@ -5,6 +5,9 @@ import { connect } from 'react-redux';
 import MoviesContainer from './containers/MoviesContainer'
 class App extends Component {
 
+  // componentDidMount() {
+  //   this.props.fetchMovies();
+  // }
 
   render() {
     return (

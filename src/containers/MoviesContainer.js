@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Movies from '../components/Movies'
 import Movie from '../components/Movie'
 import MovieApi from '../components/MovieApi'
+import ReviewInput from '../components/ReviewInput'
 import { fetchMovies } from '../redux/actions/fetchMovies'
 import { Route, Switch  } from 'react-router-dom'
 import { Redirect } from 'react-router-dom'
@@ -11,14 +12,20 @@ import { Redirect } from 'react-router-dom'
 
 class MoviesContainer extends Component {
 
-    componentDidMount() {
-        this.props.fetchMovies();
-    }
+    //useEffect = () => {}, []
+    //if you pass in empty array the function will only be called once
 
+    // useEffect(() => {
+    //     fetch('http://localhost:3000/api/v1/movies')
+    // })
 
     renderMovie = (routerProps) => {
-        const movie = this.props.movies.find (movie =>  movie.id == routerProps.match.params.id)
-            console.log(movie)
+
+        console.log(this.props.movies)
+        const parsedProps = parseInt(routerProps.match.params.id)
+        // console.log(typeof parsedProps)
+        let movie = this.props.movies.find (movie => movie.id === parsedProps)
+        console.log(movie)
         if (movie !== undefined ) {
             return <Movie {...routerProps} movies={this.props.movies} />
         } else {
@@ -30,9 +37,10 @@ class MoviesContainer extends Component {
         return (
             <div>
                 <Switch>
+                      
                         <Route path='/movies/api' component={MovieApi} />
-                        <Route path='/movies/:id/reviews/new' render = {(routerProps) => <Movie {...routerProps} movies={this.props.movies} />} />
                         <Route path='/movies/:id' render = {this.renderMovie} />
+                        <Route path='/movies/:id/reviews/new' render = {(routerProps) => <ReviewInput {...routerProps} movies={this.props.movie} />} />
                         <Route exact path='/movies' render = {(routerProps) => <Movies {...routerProps} movies={this.props.movies} />} />
                   
                 </Switch>
