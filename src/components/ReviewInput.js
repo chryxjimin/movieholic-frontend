@@ -21,8 +21,8 @@ class ReviewInput extends Component {
     
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(`handlesubmit`, this.props)
-        console.log(this.props.movies)
+        console.log(`handlesubmit`, this.props.movies.map(movie => movie.id))
+        console.log(`this.props.movies`, this.props.movies.find(movie => movie.title))
         this.props.addReview(this.state, this.props.movies.id); 
         this.setState({
             description: ''
