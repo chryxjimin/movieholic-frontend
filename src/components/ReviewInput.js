@@ -23,25 +23,16 @@ class ReviewInput extends Component {
     
     handleSubmit = (event) => {
         event.preventDefault();
-        let moviesIdArray = this.props.movies.map(movie => movie.id)
-        console.log(moviesIdArray)
-        let movieId = moviesIdArray.find(movie => movie)
-        console.log(`this.props.movies`, moviesIdArray.find(movie => movie))
-        this.props.addReview(this.state, movieId); 
+        console.log(`handleSubmit`, this.props.movies)
+        console.log(`movieId`, this.props.movieId)
+        let movieId = this.props.movieId
+        let findMovie = this.props.movies.find(movie => movieId === movie.id)
+        console.log(`findMovie`, findMovie)
+        this.props.addReview(this.state, findMovie.id); 
         this.setState({
             description: ''
         })
     }
-
-
-    // <ReviewInput movies={props.movies.filter((movie) => {
-    //     // console.log(`reviewinput`, movie)
-    //     if (props.match.params.id === movie.id) {
-    //         return movie
-    //     } else {
-    //          return movie   
-    //     }
-    // })} />
 
 
     render() {
