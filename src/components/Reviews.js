@@ -6,13 +6,11 @@ import{ Route, Link } from 'react-router-dom'
 // import Movie from './components/Movie'
 
 const Reviews = (props) => {
-
+    
     const handleDelete = (review) => {
         props.deleteReview(review.id, review.movie_id); 
     }
 
-    // console.log(props)
-    // console.log(props.reviews)
     const movieId = props.reviews.map(movie => movie.movie_id)[0]
 
     return (

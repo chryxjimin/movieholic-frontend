@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Movies from '../components/Movies'
 import Movie from '../components/Movie'
 import MovieApi from '../components/MovieApi'
-import ReviewInput from '../components/ReviewInput'
 import ReviewForm from '../components/ReviewForm'
 import { fetchMovies } from '../redux/actions/fetchMovies'
 import { Route, Switch  } from 'react-router-dom'
@@ -12,15 +11,6 @@ import { Redirect } from 'react-router-dom'
 
 class MoviesContainer extends Component {
 
-
-    // componentDidMount() {
-    //   this.props.fetchMovies();
-    // }
-
-    // useEffect(() => {
-    //     console.log(props)
-    //     fetchMovies();
-    // }, [])
 
     renderMovie = (routerProps) => {
         const parsedProps = parseInt(routerProps.match.params.id)

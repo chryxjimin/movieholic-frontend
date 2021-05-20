@@ -6,6 +6,7 @@ const ReviewForm = (props) => {
     return (
         <div>
             <ReviewInput movies={props.movies} />
+             {/* <ReviewInput {...routerProps} movies={this.props.movies} /> */}
         </div>
     )
 }

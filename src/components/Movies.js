@@ -1,6 +1,5 @@
 import React from 'react'
-import Movie from './Movie'
-import { Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
 function Movies(props) {
