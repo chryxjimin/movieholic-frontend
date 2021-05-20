@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addReview } from '../redux/actions/addReview'
-import { Redirect } from 'react-router-dom'
 
 class ReviewInput extends Component {
 

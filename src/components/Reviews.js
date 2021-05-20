@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { deleteReview } from '../redux/actions/deleteReview'
-// import { addReview } from '../redux/actions/addReview'
 import{ Link } from 'react-router-dom'
 
 
