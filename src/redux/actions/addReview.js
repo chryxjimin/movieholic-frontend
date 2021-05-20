@@ -1,7 +1,7 @@
 export const addReview = (review, movieId) => {
      return (dispatch) => {
-         console.log(`dispatch`. dispatch)
-        fetch(`http://localhost:3000/api/v1/movies/${movieId}`, {
+         console.log(`dispatch`, dispatch)
+        fetch(`http://localhost:3000/api/v1/movies/${movieId}/reviews`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -19,4 +19,4 @@ export const addReview = (review, movieId) => {
      }
 }
 
-//need to post to movies/movie_id/reviews
+//need to post to movies/movie_id

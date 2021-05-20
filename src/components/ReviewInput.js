@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addReview } from '../redux/actions/addReview'
+import { Redirect } from 'react-router-dom'
 
 class ReviewInput extends Component {
 
@@ -23,15 +24,13 @@ class ReviewInput extends Component {
     
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(`handleSubmit`, this.props.movies)
-        console.log(`movieId`, this.props.movieId)
         let movieId = this.props.movieId
         let findMovie = this.props.movies.find(movie => movieId === movie.id)
-        console.log(`findMovie`, findMovie)
         this.props.addReview(this.state, findMovie.id); 
         this.setState({
             description: ''
         })
+        this.props.reviewHistory.push(`/movies/${movieId}/reviews`)
     }
 
 
