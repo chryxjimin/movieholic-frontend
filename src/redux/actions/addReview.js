@@ -14,6 +14,7 @@ export const addReview = (review, movieId) => {
             dispatch({type: 'ADD_REVIEW', payload: movie})
             
         })
+        .catch(err => console.log(err))
      }
 }
 

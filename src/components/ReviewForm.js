@@ -3,10 +3,12 @@ import ReviewInput from '../components/ReviewInput'
 import { connect } from 'react-redux'
 
 const ReviewForm = (props) => {
+  
+    let movieId = props.match.params.id
+
     return (
         <div>
-            <ReviewInput movies={props.movies} />
-             {/* <ReviewInput {...routerProps} movies={this.props.movies} /> */}
+            <ReviewInput movieId={movieId} />
         </div>
     )
 }

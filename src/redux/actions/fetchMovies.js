@@ -4,7 +4,7 @@ export function fetchMovies() {
       fetch('http://localhost:3000/api/v1/movies')
       .then(res => res.json())
       .then(movies => {
-        console.log(`hi`, movies)
+        // console.log(`fetchmovies`, movies)
         dispatch({
           type: 'FETCH_MOVIES',
           payload: movies

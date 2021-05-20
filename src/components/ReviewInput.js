@@ -5,7 +5,7 @@ import { addReview } from '../redux/actions/addReview'
 class ReviewInput extends Component {
 
     componentDidMount(props) {
-        console.log(`componentdidmount`, props)
+        console.log(`componentdidmount`, this.props)
 
     }
     
@@ -18,17 +18,30 @@ class ReviewInput extends Component {
             [event.target.name]: event.target.value
         })
     }
+
+    
     
     handleSubmit = (event) => {
         event.preventDefault();
-        let moviesArray = this.props.movies.map(movie => movie.id)
-        console.log(moviesArray)
-        // console.log(`this.props.movies`, this.props.movies.find(movie => movie.id))
-        this.props.addReview(this.state, this.props.movies.id); 
+        let moviesIdArray = this.props.movies.map(movie => movie.id)
+        console.log(moviesIdArray)
+        let movieId = moviesIdArray.find(movie => movie)
+        console.log(`this.props.movies`, moviesIdArray.find(movie => movie))
+        this.props.addReview(this.state, movieId); 
         this.setState({
             description: ''
         })
     }
+
+
+    // <ReviewInput movies={props.movies.filter((movie) => {
+    //     // console.log(`reviewinput`, movie)
+    //     if (props.match.params.id === movie.id) {
+    //         return movie
+    //     } else {
+    //          return movie   
+    //     }
+    // })} />
 
 
     render() {
