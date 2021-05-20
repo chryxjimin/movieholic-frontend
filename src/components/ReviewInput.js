@@ -29,7 +29,8 @@ class ReviewInput extends Component {
         this.setState({
             description: ''
         })
-        this.props.reviewHistory.push(`/movies/${movieId}/reviews`)
+        // this.props.reviewHistory.push(`/movies/${movieId}/reviews`)
+        this.props.reviewHistory.push(`/movies/${movieId}`)
     }
 
 
