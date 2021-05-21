@@ -88,9 +88,9 @@ const App = (props) => {
   //     "Poster": "https://m.media-amazon.com/images/M/MV5BMzIxMDkxNDM2M15BMl5BanBnXkFtZTcwMDA5ODY1OQ@@._V1_SX300.jpg"
   //     }
   // ]);
-  useEffect(() => {
+ 
     props.fetchMovies()
-  }, [])
+  
 
     // return <div></div>;
   
