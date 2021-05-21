@@ -4,10 +4,10 @@ import { addReview } from '../redux/actions/addReview'
 
 class ReviewInput extends Component {
 
-    componentDidMount(props) {
-        console.log(`componentdidmount`, this.props)
+    // componentDidMount(props) {
+    //     console.log(`componentdidmount`, this.props)
 
-    }
+    // }
     
     state = {
         description: ''

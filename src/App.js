@@ -1,22 +1,36 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, lazy, Suspense, useState } from 'react';
+//Suspense will render something while our component is rendering
 import { connect } from 'react-redux';
 //connect gives us access to the store
 import { fetchMovies } from './redux/actions/fetchMovies'
 import MoviesContainer from './containers/MoviesContainer'
-class App extends Component {
+// import MyComp from './components/myComp'
+const MyComp = lazy(() => import('./components/myComp'))
 
-  componentDidMount() {
-    this.props.fetchMovies();
-  }
+const App = (props) => {
 
-  render() {
+  // componentDidMount() {
+  //   this.props.fetchMovies();
+  // }
+
+  // const [movies, setMovies] = useState([])
+
+  useEffect(() => {
+    props.fetchMovies()
+  }, [])
+
+  
     return (
+      
       <div className="App">
-        <MoviesContainer />
-      </div>
+          <MoviesContainer />
+          <Suspense fallback={<div>Loading...</div>} >
+            <MyComp />
+          </Suspense>
+        </div>
     );
   }
-}
+
 
  
 //mapStateToProps is a way of accessing values of our store as props

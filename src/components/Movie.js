@@ -6,7 +6,7 @@ const Movie = (props) => {
 
 
     let movie = props.movies[props.match.params.id - 1]
-   
+    console.log(`movie`, movie)
     return (
         <div>
             <p>{movie.title} <br></br> {movie.year}</p>

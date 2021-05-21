@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, lazy, Suspense } from 'react'
 import { connect } from 'react-redux';
 import Movies from '../components/Movies'
 import Movie from '../components/Movie'
+// const Movie = lazy(() => import('../components/Movie'))
 import MovieApi from '../components/MovieApi'
 import ReviewForm from '../components/ReviewForm'
 import { fetchMovies } from '../redux/actions/fetchMovies'
@@ -19,6 +20,11 @@ class MoviesContainer extends Component {
         console.log(movie)
         if (movie !== undefined ) {
             return <Movie {...routerProps} movies={this.props.movies} />
+            //(
+                // <Suspense fallback={<div>Loading...</div>} >
+                {/* </Suspense> */}
+            // )
+                
         } else {
             return <Redirect to='/movies' />
         }
