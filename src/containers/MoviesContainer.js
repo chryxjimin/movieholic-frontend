@@ -12,11 +12,8 @@ class MoviesContainer extends Component {
 
 
     renderMovie = (routerProps) => {
-        console.log(routerProps)
         const parsedProps = parseInt(routerProps.match.params.id)
-        console.log(parsedProps)
         let movie = this.props.movies.find (movie => movie.id === parsedProps)
-        console.log(movie)
         if (movie !== undefined ) {
             return <Movie {...routerProps} movies={this.props.movies} />
         }
