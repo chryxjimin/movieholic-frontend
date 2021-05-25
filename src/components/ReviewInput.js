@@ -4,11 +4,6 @@ import { addReview } from '../redux/actions/addReview'
 
 class ReviewInput extends Component {
 
-    // componentDidMount(props) {
-    //     console.log(`componentdidmount`, this.props)
-
-    // }
-    
     state = {
         description: ''
     }
@@ -29,7 +24,6 @@ class ReviewInput extends Component {
         this.setState({
             description: ''
         })
-        // this.props.reviewHistory.push(`/movies/${movieId}/reviews`)
         this.props.reviewHistory.push(`/movies/${movieId}`)
     }
 
@@ -49,7 +43,3 @@ class ReviewInput extends Component {
 }
 
 export default connect(null, { addReview })(ReviewInput);
-
-
-//for controlled forms we needed to add name to input to match the attribute within 
-//the state for the handleChange so that we can have access to teh state as event.target.description
