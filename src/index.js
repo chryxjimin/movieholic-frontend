@@ -7,6 +7,10 @@ import { createStore, applyMiddleware, compose } from 'redux';
 // You might want to use it to apply several store enhancers in a row.
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
+//The <Provider> component makes the Redux store available to any nested 
+//components that need to access the Redux store. 
+//Since any React component in a React Redux app can be connected to the store, most applications will render a <Provider> at the top level, 
+//with the entire app's component tree inside of it.
 import movieReducer from './redux/reducers/movieReducer'
 import { BrowserRouter as Router } from 'react-router-dom';
 //will use this in on e place in our application (one place only) 

@@ -6,6 +6,7 @@ const ReviewForm = (props) => {
   
     let movieId = parseInt(props.match.params.id)
     let reviewHistory = props.history
+    console.log(`reviewhistory`, reviewHistory)
 
     return (
         <div>
