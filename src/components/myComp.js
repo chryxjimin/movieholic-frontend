@@ -3,7 +3,7 @@ import React from 'react'
 export default function myComp() {
     return (
         <div>
-           <p> Hi there I am now loaded</p>
+           <p> Welcome to the Movieholic App</p>
         </div>
     )
 }
