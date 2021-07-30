@@ -1,3 +1,6 @@
+// import Button from 'react-bootstrap/Button'
+import { Button, Alert } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import React from 'react'
 import { connect } from 'react-redux'
 import { deleteReview } from '../redux/actions/deleteReview'
@@ -43,8 +46,10 @@ class Review extends React.Component {
     render(){
        const movieId = this.props.review.movie_id
         return <>
+
                 <li key={this.props.review.id}>{this.props.review.description}<button onClick={() => this.handleDelete(this.props.review)}>Delete</button><button onClick={() => this.handleUpvote(this.props.review)}>{this.state.count}</button></li>
                 <Link to={`/movies/${movieId}/reviews/new`}>Write a Review</Link>
+                 <Button>Test Button</Button>
                </>
     }
 }
