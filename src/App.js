@@ -19,7 +19,6 @@ const App = (props) => {
           <Suspense fallback={<div>Loading...</div>} >
             <MyComp />
           </Suspense>
-          {/* <Button>Test Button</Button> */}
         </div>
     );
   }

@@ -1,5 +1,5 @@
 // import Button from 'react-bootstrap/Button'
-import { Button, Alert } from 'react-bootstrap'
+import { Button, Alert, Card } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React from 'react'
 import { connect } from 'react-redux'
@@ -19,9 +19,12 @@ class Reviews extends React.Component {
         const movieId = this.props.reviews.map(movie => movie.movie_id)[0]
         return (
             <div>
-                { this.props.reviews && this.props.reviews.map(review => {
-                    return <Review review={review}/>
-                })}
+                        { this.props.reviews && this.props.reviews.map(review => {
+                            return <Card>
+                                        <Card.Body><Review review={review}/></Card.Body>
+                                   </Card>
+                        })}
+               
             </div>
         )
     }
