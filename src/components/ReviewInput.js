@@ -16,6 +16,7 @@ class ReviewInput extends Component {
 
     
     
+    
     handleSubmit = (event) => {
         event.preventDefault();
         let movieId = this.props.movieId
@@ -24,7 +25,9 @@ class ReviewInput extends Component {
         this.setState({
             description: ''
         })
-        this.props.reviewHistory.push(`/movies/${movieId}`)
+      
+
+        //this.props.reviewHistory.push(`/movies/${movieId}`)
     }
 
 

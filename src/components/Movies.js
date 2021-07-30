@@ -12,8 +12,8 @@ function Movies(props) {
             {props.movies.filter((movie) => {
                 if (search === "") {
                     return movie
-                } else if (movie.title.toLowerCase().includes(search.toLowerCase())) {
-                    return movie
+                } else {
+                    return movie.title.toLowerCase().includes(search.toLowerCase())
                 }
             }).map(movie => 
                 <div key={movie.id}><Link to={`/movies/${movie.id}`}>{movie.title}</Link></div>

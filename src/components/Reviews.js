@@ -4,22 +4,49 @@ import { deleteReview } from '../redux/actions/deleteReview'
 import{ Link } from 'react-router-dom'
 
 
-const Reviews = (props) => {
+
+
+
+class Reviews extends React.Component {
+
+
     
-    const handleDelete = (review) => {
-        props.deleteReview(review.id, review.movie_id); 
+    render() {
+        
+        const movieId = this.props.reviews.map(movie => movie.movie_id)[0]
+        return (
+            <div>
+                { this.props.reviews && this.props.reviews.map(review => {
+                    return <Review review={review}/>
+                })}
+            </div>
+        )
     }
 
-    const movieId = props.reviews.map(movie => movie.movie_id)[0]
+}
 
-    return (
-        <div>
-            { props.reviews && props.reviews.map(review => 
-                <li key={review.id}>{review.description}<button onClick={() => handleDelete(review)}>Delete</button></li>
-                )}
+class Review extends React.Component {
+    state = {
+        count: 0
+    }
+
+     handleUpvote = (review) => {
+        
+        this.setState({
+            count: this.state.count + 1
+        })
+    }
+    
+     handleDelete = (review) => {
+        this.props.deleteReview(review.id, review.movie_id); 
+    }
+    render(){
+       const movieId = this.props.review.movie_id
+        return <>
+                <li key={this.props.review.id}>{this.props.review.description}<button onClick={() => this.handleDelete(this.props.review)}>Delete</button><button onClick={() => this.handleUpvote(this.props.review)}>{this.state.count}</button></li>
                 <Link to={`/movies/${movieId}/reviews/new`}>Write a Review</Link>
-        </div>
-    )
+               </>
+    }
 }
 
 

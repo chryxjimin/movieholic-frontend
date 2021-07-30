@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+const apiKey = ""
 class MovieApi extends Component {
 
     state = {
@@ -7,8 +8,9 @@ class MovieApi extends Component {
     }
 
 
+
     componentDidMount() {
-        fetch('http://www.omdbapi.com/?t=batman&page=1&apikey=${apiKey}')
+        fetch(`http://www.omdbapi.com/?t=batman&page=1&apikey=${apiKey}`)
         .then(res => res.json())
         .then(data => console.log(data))
     }
