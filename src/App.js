@@ -16,9 +16,9 @@ const App = (props) => {
     return (
       <div className="App">
           <MoviesContainer />
-          {/* <Suspense fallback={<div>Loading...</div>} >
+          <Suspense fallback={<div>Loading...</div>} >
             <MyComp />
-          </Suspense> */}
+          </Suspense>
         </div>
     );
   }

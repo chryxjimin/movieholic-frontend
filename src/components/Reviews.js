@@ -21,9 +21,11 @@ class Reviews extends React.Component {
             <div>
                     
                         { this.props.reviews && this.props.reviews.map(review => {
-                            return <Card>
-                                        <Card.Body><Review review={review}/></Card.Body>
-                                   </Card>
+                            // return <Card>
+                            //             <Card.Body><Review review={review}/></Card.Body>
+                            //        </Card>
+
+                            return <Review review={review}/>
                         })}
                 
                
