@@ -24,9 +24,8 @@ class Review extends React.Component {
        const movieId = this.props.review.movie_id
         return <>
                 <Card>
-                        <li key={this.props.review.id}>{this.props.review.description}<button onClick={() => this.handleDelete(this.props.review)}>Delete</button><button onClick={() => this.handleUpvote(this.props.review)}>{this.state.count}</button></li>
+                        <li key={this.props.review.id}>{this.props.review.description} <Button onClick={() => this.handleDelete(this.props.review)}>Delete</Button> <Button onClick={() => this.handleUpvote(this.props.review)}>{this.state.count}</Button></li>
                         <Link to={`/movies/${movieId}/reviews/new`}>Write a Review</Link>
-                        <Button>Test Button</Button>
                 </Card>
                 
                </>
