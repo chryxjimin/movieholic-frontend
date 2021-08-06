@@ -1,3 +1,4 @@
+import { Form } from 'react-bootstrap'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
@@ -7,7 +8,12 @@ function Movies(props) {
 
     return (
         <div>
-            <input type="text" name="searchQuery" placeholder="Search..." onChange={(event) => {setSearch(event.target.value)}}></input>
+            <Form>
+                <Form.Label>Movieholic</Form.Label>
+                <Form.Group>
+                    <Form.Control type="text" name="searchQuery" placeholder="Search..." onChange={(event) => {setSearch(event.target.value)}}></Form.Control>
+                </Form.Group>
+            </Form>
            
             {props.movies.filter((movie) => {
                 if (search === "") {
