@@ -1,9 +1,7 @@
-import { Card } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React from 'react'
 import Review from '../components/Review'
-import { connect } from 'react-redux'
-import { deleteReview } from '../redux/actions/deleteReview'
+
 
 
 
@@ -21,10 +19,6 @@ class Reviews extends React.Component {
             <div>
                     
                         { this.props.reviews && this.props.reviews.map(review => {
-                            // return <Card>
-                            //             <Card.Body><Review review={review}/></Card.Body>
-                            //        </Card>
-
                             return <Review review={review}/>
                         })}
                 
