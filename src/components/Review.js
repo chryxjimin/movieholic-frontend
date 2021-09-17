@@ -2,7 +2,6 @@ import { Card, Button } from 'react-bootstrap'
 import React from 'react'
 import { connect } from 'react-redux'
 import { deleteReview } from '../redux/actions/deleteReview'
-import { Link } from 'react-router-dom'
 // import ButtonGroup from 'react-bootstrap/ButtonGroup'
 
 
@@ -30,7 +29,7 @@ class Review extends React.Component {
                        
                     {/* </ButtonGroup> */}
                 </Card>
-                <Link to={`/movies/${movieId}/reviews/new`}>Write a Review</Link>
+               
                </>
     }
 }
