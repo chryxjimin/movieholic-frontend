@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addReview } from '../redux/actions/addReview'
+import { compose } from 'redux'
+import { withRouter } from 'react-router-dom';
 
 class ReviewInput extends Component {
 
@@ -25,24 +27,30 @@ class ReviewInput extends Component {
         this.setState({
             description: ''
         })
-      
-
-        //this.props.reviewHistory.push(`/movies/${movieId}`)
+        this.props.reviewHistory.push(`/movies/${movieId}`)
     }
+
+
 
 
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit.bind(this)}>
                     <label>Movie Review</label>
                     <input onChange={this.handleChange} name="description" type="text-area" placeholder="Type in your review" value={this.state.description}>
                     </input>
                     <input type="submit" />
                 </form>
+
+
             </div>
         )
     }
 }
 
-export default connect(null, { addReview })(ReviewInput);
+export default compose(
+    withRouter, 
+    connect(null, { addReview })
+)(ReviewInput);
+

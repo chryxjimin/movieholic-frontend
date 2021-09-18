@@ -25,7 +25,6 @@ class MoviesContainer extends Component {
         return (
             <div>
                 <Switch>
-                        {/* <Route path='/movies/api' component={MovieApi} /> */}
                         <Route path='/movies/:id/reviews/new' render = {(routerProps) => <ReviewForm {...routerProps} movies={this.props.movies} />} />
                         <Route path='/movies/:id' render = {this.renderMovie} />
                         <Route exact path='/movies' render = {(routerProps) => <Movies {...routerProps} movies={this.props.movies} />} />
