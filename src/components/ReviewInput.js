@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { addReview } from '../redux/actions/addReview'
 import { compose } from 'redux'
 import { withRouter } from 'react-router-dom';
-
+import Button from 'react-bootstrap/Button'
 class ReviewInput extends Component {
 
     state = {
@@ -40,7 +40,7 @@ class ReviewInput extends Component {
                     <label>Movie Review</label>
                     <input onChange={this.handleChange} name="description" type="text-area" placeholder="Type in your review" value={this.state.description}>
                     </input>
-                    <button type="submit">Submit</button>
+                    <Button variant="outline-dark" type="submit">Submit</Button>
                 </form>
 
 
