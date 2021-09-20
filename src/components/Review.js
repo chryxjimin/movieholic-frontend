@@ -5,6 +5,7 @@ import { deleteReview } from '../redux/actions/deleteReview'
 // import ButtonGroup from 'react-bootstrap/ButtonGroup'
 
 
+
 class Review extends React.Component {
     state = {
         count: 0
@@ -25,7 +26,7 @@ class Review extends React.Component {
         return <>
                 <Card>
                     {/* <ButtonGroup size="sm"> */}
-                        <li key={this.props.review.id}>{this.props.review.description} <Button variant="outline-secondary" onClick={() => this.handleDelete(this.props.review)}>Delete</Button> <Button variant="outline-secondary" onClick={() => this.handleUpvote(this.props.review)}>{this.state.count}</Button></li>
+                        <li key={this.props.review.id}>{this.props.review.description} <Button variant="outline-dark" onClick={() => this.handleDelete(this.props.review)}>Delete</Button> <Button variant="outline-dark" onClick={() => this.handleUpvote(this.props.review)}>{this.state.count}</Button></li>
                        
                     {/* </ButtonGroup> */}
                 </Card>

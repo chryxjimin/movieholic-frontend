@@ -36,7 +36,7 @@ function Movies(props) {
                     return movie.title.toLowerCase().includes(search.toLowerCase())
                 }
             }).map(movie => 
-                <div key={movie.id}><button type="button" onClick={handleClick}>{movie.title}</button></div>
+                <div key={movie.id}><Button variant="outline-dark" onClick={handleClick}>{movie.title}</Button></div>
             )}
         </div>
     )
