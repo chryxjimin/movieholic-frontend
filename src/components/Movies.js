@@ -10,15 +10,16 @@ function Movies(props) {
     const [search, setSearch] = useState("");
 
     let history = useHistory();
-
-    function handleClick() {
-        console.log(props.movies)
-        props.movies.map((movie) => {
-
-            history.push(`/movies/${movie.id}`)
+    
+    function handleClick(event) {
+        event.preventDefault();
+        let movieIdArray = props.movies.map(movie => movie.id)
+        let movieId = event.target.id
+        let foundMovieId = movieIdArray.find(movie => movie == movieId)
+        history.push(`/movies/${foundMovieId}`)
         }
-        )
-    }
+        
+
 
     return (
         <div>
@@ -36,7 +37,7 @@ function Movies(props) {
                     return movie.title.toLowerCase().includes(search.toLowerCase())
                 }
             }).map(movie => 
-                <div key={movie.id}><Button variant="outline-dark" onClick={handleClick}>{movie.title}</Button></div>
+                <div key={movie.id}><Button id={movie.id} variant="outline-dark" onClick={handleClick}>{movie.title}</Button></div>
             )}
         </div>
     )
@@ -49,5 +50,3 @@ function Movies(props) {
 
 export default Movies;
 
-
-{/* <div key={movie.id}><Button variant="outline-secondary"><Link to={`/movies/${movie.id}`}>{movie.title}</Link></Button></div> */}
