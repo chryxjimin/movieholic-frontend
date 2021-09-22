@@ -14,14 +14,9 @@ function Movies(props) {
     function handleClick(event) {
         event.preventDefault();
         let movieIdArray = props.movies.map(movie => movie.id)
-        // console.log(typeof movieIdArray[0], "typeof movieIdArray")
         let movieId = event.target.id
         let parsedMovieId = parseInt(movieId)
-        // console.log(typeof movieId," typeof movieId")
-        // console.log(typeof parsedMovieId," typeof parsedmovieId")
         let foundMovieId = movieIdArray.find(movie => movie === parsedMovieId)
-        // console.log(foundMovieId,"foundmovieId")
-        // console.log(typeof foundMovieId," typeof foundmovieId")
         history.push(`/movies/${foundMovieId}`)
         }
         
