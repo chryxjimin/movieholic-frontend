@@ -40,7 +40,9 @@ class ReviewInput extends Component {
                     <label>Movie Review</label>
                     <input onChange={this.handleChange} name="description" type="text-area" placeholder="Type in your review" value={this.state.description}>
                     </input>
-                    <Button variant="outline-dark" type="submit">Submit</Button>
+                    <Button id={this.props.movieId} variant="outline-dark" type="submit">Submit</Button>
+                    
+                    {console.log(this.props.movies, "id")}
                 </form>
 
 
