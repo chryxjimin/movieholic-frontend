@@ -14,10 +14,14 @@ class Reviews extends React.Component {
     
     render() {
         
-        const movieId = this.props.reviews.map(movie => movie.movie_id)[0]
+        // const movieId = this.props.reviews.map(movie => movie.movie_id)[0]
+
+        const movieId = this.props.movie.id
+        console.log(this.props.movie.id, "this.props.movie.id Reviews")
+        console.log(movieId, "movieId Reviews")
         return (
             <div>
-                    
+                        
                         { this.props.reviews && this.props.reviews.map(review => {
                             return <Review review={review}/>
                         })}

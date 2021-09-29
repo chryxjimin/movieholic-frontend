@@ -23,6 +23,7 @@ class Review extends React.Component {
     }
     render(){
        const movieId = this.props.review.movie_id
+       console.log(movieId, "movieId Review")
         return <>
                 <Card>
                     {/* <ButtonGroup size="sm"> */}

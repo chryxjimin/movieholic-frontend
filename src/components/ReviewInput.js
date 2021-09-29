@@ -22,7 +22,9 @@ class ReviewInput extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         let movieId = this.props.movieId
+        console.log(movieId, "movieId ReviewInput")
         let findMovie = this.props.movies.find(movie => movieId === movie.id)
+        console.log(findMovie.id, "findMovie.id ReviewInput")
         this.props.addReview(this.state, findMovie.id); 
         this.setState({
             description: ''

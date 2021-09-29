@@ -13,8 +13,8 @@ function Movies(props) {
     
     function handleClick(event) {
         event.preventDefault();
-        let movieIdArray = props.movies.map(movie => movie.id)
         let movieId = event.target.id
+        let movieIdArray = props.movies.map(movie => movie.id)
         let parsedMovieId = parseInt(movieId)
         let foundMovieId = movieIdArray.find(movie => movie === parsedMovieId)
         history.push(`/movies/${foundMovieId}`)

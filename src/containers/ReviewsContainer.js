@@ -7,7 +7,9 @@ class ReviewsContainer extends Component {
         return (
             <div>
                 <h3>Reviews</h3>
-                <Reviews reviews={this.props.movie && this.props.movie.reviews} />
+                <Reviews movie={this.props.movie} reviews={this.props.movie.reviews} />
+                {console.log(this.props.movie, "this.props.movie ReviewsContainer")}
+                {console.log(this.props.movie.reviews, "reviews ReviewsContainer")}
             </div>
         )
     }
